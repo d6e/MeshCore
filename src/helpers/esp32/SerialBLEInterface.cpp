@@ -21,7 +21,7 @@ void SerialBLEInterface::begin(const char* device_name, uint32_t pin_code) {
   sec.setStaticPIN(pin_code);
   sec.setAuthenticationMode(ESP_LE_AUTH_REQ_SC_MITM_BOND);
 
-  //BLEDevice::setPower(ESP_PWR_LVL_N8);
+  BLEDevice::setPower(ESP_PWR_LVL_P6);  // Set higher power level for maximum stability
 
   // Create the BLE Server
   pServer = BLEDevice::createServer();
